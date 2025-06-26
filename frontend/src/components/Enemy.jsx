@@ -33,11 +33,11 @@ export const Enemy = () => {
 
   return (
     <div className='w-80 h-80 relative mt-10 mr-10'>
-        <img src="/Sprite/Wizard/Front/Hat.png" alt="Enemy"        className='hat absolute z-10' />
-        <img src="/Sprite/Wizard/Front/Head.png" alt="Enemy"       className='head absolute z-8' />
-        <img src="/Sprite/Wizard/Front/Corp.png" alt="Enemy"       className='corp absolute z-9' />
-        <img src="/Sprite/Wizard/Front/Fond_Corp.png" alt="Enemy"  className='fond-corp absolute z-7' />
-        <img src="/Sprite/Wizard/Front/Fond_Hat.png" alt="Enemy"   className='fond-hat absolute z-7' />
+        <img src="/Sprite/Wizard/Front/Hat.png" alt="Enemy"        className='hat absolute z-10'      draggable={false}/>
+        <img src="/Sprite/Wizard/Front/Head.png" alt="Enemy"       className='head absolute z-8'      draggable={false}/>
+        <img src="/Sprite/Wizard/Front/Corp.png" alt="Enemy"       className='corp absolute z-9'      draggable={false}/>
+        <img src="/Sprite/Wizard/Front/Fond_Corp.png" alt="Enemy"  className='fond-corp absolute z-7' draggable={false}/>
+        <img src="/Sprite/Wizard/Front/Fond_Hat.png" alt="Enemy"   className='fond-hat absolute z-7'  draggable={false}/>
     </div>
   )
 }

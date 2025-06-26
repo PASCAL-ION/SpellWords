@@ -33,9 +33,9 @@ export const Character = () => {
 
   return (
     <div className={`w-110 h-110 relative mt-70`}>
-        <img src="/Sprite/Wizard/Back/Hat.png" alt="Enemy"        className='hat absolute z-10' />
-        <img src="/Sprite/Wizard/Back/Head.png" alt="Enemy"       className='head absolute z-8' />
-        <img src="/Sprite/Wizard/Back/Corp.png" alt="Enemy"       className='corp absolute z-9' />
+        <img src="/Sprite/Wizard/Back/Hat.png" alt="Enemy"   className='hat absolute z-10' draggable={false} />
+        <img src="/Sprite/Wizard/Back/Head.png" alt="Enemy"  className='head absolute z-8' draggable={false} />
+        <img src="/Sprite/Wizard/Back/Corp.png" alt="Enemy"  className='corp absolute z-9' draggable={false} />
     </div>
   )
 }
