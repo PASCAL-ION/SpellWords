@@ -23,5 +23,7 @@ model GeneralStats {
 }
 
 model Logs {
-  
+  id Int @id @default(autoincrement())
+  user String
+  date DateTime @default(now())
 }
