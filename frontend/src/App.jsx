@@ -11,7 +11,7 @@ function App() {
         <Character />
         <Enemy />
       </div>
-      <Terminal nombre_de_lettres={8} />
+      <Terminal nombre_de_lettres={10} />
     </>
   )
 }
