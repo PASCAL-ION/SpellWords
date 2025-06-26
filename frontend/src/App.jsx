@@ -1,4 +1,6 @@
 import './App.css'
+import { Character } from './components/Character'
+import { Enemy } from './components/Enemy'
 
 function App() {
  
@@ -6,7 +8,10 @@ function App() {
 
   return (
     <>
-      <h1 className='text-6xl font-black text-blue-700'>SpellWord</h1>
+      <div className='flex justify-between w-[100vw] h-fit'>
+        <Character />
+        <Enemy />
+      </div>
     </>
   )
 }
