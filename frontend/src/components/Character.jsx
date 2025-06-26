@@ -2,7 +2,6 @@ import gsap from 'gsap'
 import { useEffect } from 'react'
 
 export const Character = () => {
-
     useEffect(() => {
       gsap.to('.hat', {
         y: 11,
@@ -29,7 +28,6 @@ export const Character = () => {
       })
 
     }, [])
-    
 
   return (
     <div className={`w-110 h-110 relative mt-70`}>
