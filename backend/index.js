@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/stats', async (req, res) => {
-  const stats = await prisma.stats.findMany();
+  const stats = await prisma.GeneralStats.findMany();
   console.log(stats);
   res.json(stats)
 })
