@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+.enchanted {
+    font-family: 'MyEnchantedFont';
+}
+
+@font-face {
+    font-family: 'MyEnchantedFont';
+    src: url('/fonts/enchanted_land/Enchanted Land.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
