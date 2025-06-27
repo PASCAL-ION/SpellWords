@@ -1,6 +1,5 @@
 import { Character } from '../components/Character'
 import { Enemy } from '../components/Enemy'
-import { FireBall } from '../components/FireBall'
 import { Terminal } from '../components/Typing/Terminal'
 
 export function Arena({ username }) {
