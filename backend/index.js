@@ -21,6 +21,14 @@ const io = new Server(server, {
 });
 
 io.on('connection', (socket) => {
+  const users = []
+
+  socket.on('new_user', (data) => {
+    console.log(data.name)
+    users.push(data.name)
+    console.log(users)
+  })
+
   socket.on('start_game', (data) => {
     console.log('Start game demandé par :', data.username);
     // logique de matchmaking ici
