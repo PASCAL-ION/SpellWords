@@ -78,7 +78,7 @@ export const Terminal = ({nombre_de_lettres}) => {
   return (
     <>
         <p className="absolute top-0 left-0 m-10 text-8xl font-bold text-white z-100">{spell}</p>
-        <div className='z-100 flex absolute bottom-20 right-20'>
+        <div className='z-100 flex absolute bottom-0 right-20'>
         {Array.from({ length: nombre_de_lettres }, (_, index) => (
             <Lettre key={index} lettre={lettres[index]} />
         ))}
