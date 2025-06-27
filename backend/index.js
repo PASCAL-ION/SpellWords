@@ -18,9 +18,9 @@ const io = new Server(server, {
 });
 
 io.on('connection', (socket) => {
-  socket.on('start_game', (data) => {
-    console.log('Start game demandé par :', data.username);
-    // logique de matchmaking ici
+  socket.on('start_game', (room) => {
+    console.log('Room créée :', room);
+    socket.join(room);
   });
 });
 

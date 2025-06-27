@@ -8,7 +8,7 @@ export function Arena({ username }) {
     <div
         className="bg-white w-full h-screen flex items-center justify-center"
         style={{
-          // backgroundImage: "url('arena.jpg')",
+          backgroundImage: "url('arena.jpg')",
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center',

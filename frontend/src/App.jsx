@@ -33,11 +33,7 @@ function App() {
 
   return (
     <>
-
-    
-
       <Arena username={username} />
-
     </>
   )
 }
