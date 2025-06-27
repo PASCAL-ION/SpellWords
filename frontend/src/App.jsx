@@ -4,6 +4,7 @@ import StatPage from './pages/stats';
 import { Home } from './pages/Home';
 import { Layout } from './components/Layout';
 import { useEffect, useState } from 'react'
+import { Arena } from './pages/Arena';
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="stats" element={<StatPage />} />
+          <Route path="arena" element={<Arena />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
