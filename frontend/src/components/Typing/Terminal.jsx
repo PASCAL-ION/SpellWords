@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { Lettre } from "./Lettre"
+import { FireBall } from "../FireBall"
 
 export const Terminal = ({nombre_de_lettres}) => {
 
     const [lettres, setlettres] = useState([])
     const [index, setindex] = useState(0)
     const [spell, setspell] = useState('')
+    const [showFireBall, setShowFireBall] = useState(false) 
 
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown)
@@ -53,6 +55,8 @@ export const Terminal = ({nombre_de_lettres}) => {
         setindex(0)
         setlettres([])
         setspell(randomName())
+        setShowFireBall(true)
+        setTimeout(() => setShowFireBall(false), 2400)
     }
 
     const randomName = () => {
@@ -73,12 +77,14 @@ export const Terminal = ({nombre_de_lettres}) => {
 
   return (
     <>
-        <p className="absolute top-0 left-0 m-10 text-8xl font-bold text-black z-100">{spell}</p>
+        <p className="absolute top-0 left-0 m-10 text-8xl font-bold text-white z-100">{spell}</p>
         <div className='z-100 flex absolute bottom-20 right-20'>
         {Array.from({ length: nombre_de_lettres }, (_, index) => (
             <Lettre key={index} lettre={lettres[index]} />
         ))}
+
         </div>
+        {showFireBall && <FireBall />} 
     </>
   )
 }
