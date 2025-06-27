@@ -31,7 +31,7 @@ export const Lettre = ({lettre}) => {
   return (
     <div className="w-30 relative">
         <img ref={runeRef} src={randombool ? "/Sprite/rune/rune_1.png" : "/Sprite/rune/rune_2.png"} alt="Lettre" />
-        <p ref={lettreRef} className="drop-shadow-[0_3.2px_3.2px_rgba(0,0,0,0.8)] text-8xl font-black text-white absolute top-[50%] left-[50%] w-20 h-20 text-center transform -translate-x-1/2 -translate-y-1/2 opacity-100">
+        <p ref={lettreRef} className="enchanted drop-shadow-[0_3.2px_3.2px_rgba(0,0,0,0.8)] text-8xl font-black text-white absolute top-[50%] left-[50%] w-20 h-20 text-center transform -translate-x-1/2 -translate-y-1/2 opacity-100">
             {lettre}
         </p>
     </div>
