@@ -13,8 +13,13 @@ function StatPage() {
 
   return (
     <>
-    <div className="h-full bg-cover  bg-[url('assets/sword_and_spell.jpg')]">
+    <div className="flex justify-around items-center h-full w-full bg-cover bg-[url('assets/sword_and_spell.jpg')]">
+    <div>
       {StatsTable(stats)}
+    </div>
+    <div>
+      {StatsTable(stats)}
+    </div>
     </div>
     </>
   );
