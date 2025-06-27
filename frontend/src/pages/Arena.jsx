@@ -22,6 +22,10 @@ export function Arena({ username }) {
         {username && `Player: ${username}`}
       </div>
       <Terminal nombre_de_lettres={10} />
+      <div className='background w-[110vw] h-[110vh] absolute -top-[5vh] -left-[5vw] z-[-1] bg-black'>
+        <img src="/arena.jpg" alt="Arena Background" className='w-full h-full object-cover bg-no-repeat blur-[1px] opacity-90' draggable={false} />
+      </div>
+      {/* <FireBall/> */}
 
     </div>
     </>

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { Lettre } from "./Lettre"
+import { FireBall } from "../FireBall"
 
 export const Terminal = ({nombre_de_lettres}) => {
 
     const [lettres, setlettres] = useState([])
     const [index, setindex] = useState(0)
     const [spell, setspell] = useState('')
+    const [showFireBall, setShowFireBall] = useState(false) 
 
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown)
@@ -50,13 +52,18 @@ export const Terminal = ({nombre_de_lettres}) => {
 
     const CastSpell = () => {
         console.log("Spell casted with letters:", lettres.join(''))
+        if(lettres.join('') == spell.toUpperCase()){
+            setShowFireBall(true)
+            setTimeout(() => setShowFireBall(false), 2400)
+        }
+
         setindex(0)
         setlettres([])
         setspell(randomName())
     }
 
     const randomName = () => {
-        const prefixes = ["abra", "zora", "igni", "obli", "vela", "myst", "aqua", "drax", "lexo", "lumi", "necro", "pyro","luno", "aero", "soli", "fero", "glaci", "volti", "terra", "aero"]
+        const prefixes = ["abra", "zora", "igni", "obli",'mecha',"migna", "vela",'avada', "myst", "aqua", "drax", "lexo", "lumi", "necro", "pyro","luno", "aero", "soli", "fero", "glaci", "volti", "terra", "aero"]
         const middles = ["man", "tur", "zor", "ven", "rax", "lum", "nor", "sil", "dar", "ker", "tar", "mar", "nar", "par", "sar", "tar", "zar", "kor", "lor", "mor", "nor", "por", "ror", "tor", "vor","num","lum","dum"]
         const suffixes = ["on", "im", "um", "ar", "us", "ax", "is", "os", "et", "el", "or", "an", "en", "in", "on", "un", "al", "il", "ul","ko", "lo", "mo", "no", "po", "ro", "to", "vo"]
 
@@ -68,17 +75,16 @@ export const Terminal = ({nombre_de_lettres}) => {
     }
 
 
-
-
-
   return (
     <>
-        <p className="absolute top-0 left-0 m-10 text-8xl font-bold text-black z-100">{spell}</p>
-        <div className='z-100 flex absolute bottom-20 right-20'>
+        <p className="absolute top-0 left-0 m-10 text-8xl font-bold text-white z-100">{spell}</p>
+        <div className='z-100 flex absolute bottom-0 right-20'>
         {Array.from({ length: nombre_de_lettres }, (_, index) => (
             <Lettre key={index} lettre={lettres[index]} />
         ))}
+
         </div>
+        {showFireBall && <FireBall />} 
     </>
   )
 }
