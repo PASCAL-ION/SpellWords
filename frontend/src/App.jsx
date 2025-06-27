@@ -1,17 +1,24 @@
 import './App.css'
-import { Character } from './components/Character'
-import { Enemy } from './components/Enemy'
-import { Terminal } from './components/Typing/Terminal'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import StatPage from './pages/stats';
+import { Home } from './pages/Home';
+import { Layout } from './components/Layout';
+import { useEffect, useState } from 'react'
 
 function App() {
- 
+
   return (
     <>
-      <div className='flex justify-between w-[100vw] h-fit'>
-        <Character />
-        <Enemy />
-      </div>
-      <Terminal nombre_de_lettres={10} />
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="stats" element={<StatPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+      {/* <Arena username={username} /> */}
     </>
   )
 }
