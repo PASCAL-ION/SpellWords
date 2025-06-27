@@ -1,17 +1,22 @@
 import './App.css'
-import { Character } from './components/Character'
-import { Enemy } from './components/Enemy'
+// import { Character } from './components/Character'
+// import { Enemy } from './components/Enemy'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import StatPage from './pages/stats';
+import { Layout } from './components/Layout';
 
 function App() {
  
-  
-
   return (
     <>
-      <div className='flex justify-between w-[100vw] h-fit'>
-        <Character />
-        <Enemy />
-      </div>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="stats" element={<StatPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
