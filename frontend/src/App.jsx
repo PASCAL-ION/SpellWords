@@ -35,7 +35,6 @@ function App() {
     <>
 
     
-      <Terminal nombre_de_lettres={10} />
 
       <Arena username={username} />
 
