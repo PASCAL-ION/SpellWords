@@ -12,21 +12,18 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173', // port de Vite
+    origin: [
+      'http://localhost:5173',
+      'https://10.68.246.252:5173',
+    ],
     methods: ['GET', 'POST']
   }
 });
 
 io.on('connection', (socket) => {
-  console.log('Un utilisateur connecté : ' + socket.id);
-
-  socket.on('message', (data) => {
-    console.log(data);
-    io.emit('message', data);
-  });
-
-  socket.on('disconnect', () => {
-    console.log('Utilisateur déconnecté : ' + socket.id);
+  socket.on('start_game', (data) => {
+    console.log('Start game demandé par :', data.username);
+    // logique de matchmaking ici
   });
 });
 
@@ -41,4 +38,4 @@ app.get('/stats', async (req, res) => {
 })
 
 const PORT = 3001;
-server.listen(PORT, () => console.log(`Backend en écoute sur http://localhost:${PORT}`));
+server.listen(PORT, '0.0.0.0', () => console.log(`Backend en écoute sur http://localhost:${PORT}`));
