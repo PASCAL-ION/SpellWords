@@ -52,11 +52,14 @@ export const Terminal = ({nombre_de_lettres}) => {
 
     const CastSpell = () => {
         console.log("Spell casted with letters:", lettres.join(''))
+        if(lettres.join('') == spell.toUpperCase()){
+            setShowFireBall(true)
+            setTimeout(() => setShowFireBall(false), 2400)
+        }
+
         setindex(0)
         setlettres([])
         setspell(randomName())
-        setShowFireBall(true)
-        setTimeout(() => setShowFireBall(false), 2400)
     }
 
     const randomName = () => {
@@ -70,9 +73,6 @@ export const Terminal = ({nombre_de_lettres}) => {
 
         return `${randomPrefix}${randomMiddle}${randomSuffix}`
     }
-
-
-
 
 
   return (

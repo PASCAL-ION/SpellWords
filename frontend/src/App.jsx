@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import StatPage from './pages/stats';
 import { Home } from './pages/Home';
 import { Layout } from './components/Layout';
-import { useEffect, useState } from 'react'
 import { Arena } from './pages/Arena';
 
 function App() {
