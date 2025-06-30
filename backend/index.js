@@ -42,7 +42,9 @@ io.on("connection", (socket) => {
         }
       });
     } else if (!data.room) {
+      console.log(data);
       rooms.some((element) => {
+        console.log("hhhhhhhhhhhhhhhh");
         if (element.player2 === null) {
           element.player2 = data.name;
           socket.join(element.idRoom);
@@ -53,21 +55,21 @@ io.on("connection", (socket) => {
           });
           console.log("Room rejointe :", element);
           return true;
-        } else {
-          const newRoom = rooms.length + 1;
-          rooms.push({ idRoom: newRoom, player1: data.name, player2: null });
-          socket.join(newRoom);
-          io.to(room).emit("start_game", {
-            room: newRoom,
-            player1: data.name,
-            player2: null,
-          });
-          console.log("Room créée :", {
-            room: newRoom,
-            player1: data.name,
-            player2: null,
-          });
         }
+      });
+      console.log("Nouvelle room");
+      const newRoom = rooms.length + 1;
+      rooms.push({ idRoom: newRoom, player1: data.name, player2: null });
+      socket.join(newRoom);
+      io.to(newRoom).emit("start_game", {
+        idRoom: newRoom,
+        player1: data.name,
+        player2: null,
+      });
+      console.log("Room créée :", {
+        room: newRoom,
+        player1: data.name,
+        player2: null,
       });
     }
   });
