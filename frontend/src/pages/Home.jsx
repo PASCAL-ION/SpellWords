@@ -19,6 +19,13 @@ export const Home = () => {
     document.title = inGame ? "Arena" : "Home";
   }, [inGame]);
 
+  useEffect(() => {
+    socket.on("start_game", (data) => {
+      alert(data.idRoom);
+    });
+  }, [socket]);
+
+
 
 
   return (
