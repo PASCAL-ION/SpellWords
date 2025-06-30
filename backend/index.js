@@ -17,9 +17,9 @@ const io = new Server(server, {
   },
 });
 
+const users = [];
+const rooms = [];
 io.on("connection", (socket) => {
-  const users = [];
-  const rooms = [];
   socket.on("new_user", (data) => {
     console.log(data.name);
     users.push(data.name);
@@ -42,35 +42,38 @@ io.on("connection", (socket) => {
         }
       });
     } else if (!data.room) {
-      console.log(data);
-      rooms.some((element) => {
-        console.log("hhhhhhhhhhhhhhhh");
-        if (element.player2 === null) {
-          element.player2 = data.name;
-          socket.join(element.idRoom);
-          io.to(element.idRoom).emit("start_game", {
-            room: element.idRoom,
-            player1: element.player1,
-            player2: element.player2,
-          });
-          console.log("Room rejointe :", element);
-          return true;
-        }
-      });
-      console.log("Nouvelle room");
-      const newRoom = rooms.length + 1;
-      rooms.push({ idRoom: newRoom, player1: data.name, player2: null });
-      socket.join(newRoom);
-      io.to(newRoom).emit("start_game", {
-        idRoom: newRoom,
-        player1: data.name,
-        player2: null,
-      });
-      console.log("Room créée :", {
-        room: newRoom,
-        player1: data.name,
-        player2: null,
-      });
+      console.log("in else if room");
+      if (rooms.length !== 0) {
+        rooms.some((element) => {
+          console.log("hhhhhhhhhhhhhhhh");
+          if (element.player2 === null) {
+            element.player2 = data.name;
+            socket.join(element.idRoom);
+            io.to(element.idRoom).emit("start_game", {
+              room: element.idRoom,
+              player1: element.player1,
+              player2: element.player2,
+            });
+            console.log("Room rejointe :", element);
+            return true;
+          }
+        });
+      } else {
+        console.log("Nouvelle room");
+        const newRoom = rooms.length + 1;
+        rooms.push({ idRoom: newRoom, player1: data.name, player2: null });
+        socket.join(newRoom);
+        io.to(newRoom).emit("start_game", {
+          idRoom: newRoom,
+          player1: data.name,
+          player2: null,
+        });
+        console.log("Room créée :", {
+          room: newRoom,
+          player1: data.name,
+          player2: null,
+        });
+      }
     }
   });
 });
