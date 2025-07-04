@@ -9,6 +9,11 @@ export const Terminal = ({nombre_de_lettres}) => {
     const [spell, setspell] = useState('')
     const [showFireBall, setShowFireBall] = useState(false) 
 
+    setInterval(() => {
+        setShowFireBall(!showFireBall);
+        console.log(showFireBall)
+    }, 3000);
+
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown)
         return () => window.removeEventListener("keydown", handleKeyDown)

@@ -18,7 +18,7 @@ export const FireBall = () => {
           { id: count, duration: 1.2 + Math.random() * 0.8 }
         ])
         count++
-      }, 60)
+      }, 70)
     }
     
     return () => clearInterval(interval)
@@ -57,4 +57,5 @@ export const FireBall = () => {
       ))}
     </div>
   )
+ 
 }

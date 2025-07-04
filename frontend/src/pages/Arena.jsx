@@ -6,16 +6,11 @@ import { Terminal } from '../components/Typing/Terminal'
 export function Arena({ username }) {
   return (
     <>
-      <Shield duration={3}/>
       <div
-          className="bg-white w-full h-screen flex items-center justify-center"
-          style={{
-            backgroundImage: "url('arena.jpg')",
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+          className=" w-full h-screen flex items-center justify-center"
+        
         >
+      {/* <Shield duration={3}/> */}
       <div className='flex justify-between w-[100vw] h-fit'>
         <Character />
         <Enemy />

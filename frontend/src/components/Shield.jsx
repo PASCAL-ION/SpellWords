@@ -44,7 +44,7 @@ export const Shield = ({duration}) => {
     }, []);
     
   return (
-    <div className="relative z-10000 w-100 h-100">
+    <div className="absolute z-10000 w-80 h-80 left-0 bottom-0">
         <img ref={leftRef} className="absolute top-0 left-0" src='/Sprite/Shield/Left.png' alt='partie gauche du bouclier'/>
         <img ref={rightRef} className="absolute top-0 left-0" src='/Sprite/Shield/Right.png' alt='partie droite du bouclier'/>
     </div>
