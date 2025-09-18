@@ -1,10 +1,21 @@
 import { Character } from '../components/Character'
 import { Enemy } from '../components/Enemy'
+import { Shield } from '../components/Shield'
 import { Terminal } from '../components/Typing/Terminal'
 
 export function Arena({ username }) {
   return (
-    <div className='relative'>
+    <>
+      <Shield duration={3}/>
+      <div
+          className="bg-white w-full h-screen flex items-center justify-center"
+          style={{
+            backgroundImage: "url('arena.jpg')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
       <div className='flex justify-between w-[100vw] h-fit'>
         <Character />
         <Enemy />
@@ -16,8 +27,8 @@ export function Arena({ username }) {
       <div className='background w-[110vw] h-[110vh] absolute -top-[5vh] -left-[5vw] z-[-1] bg-black'>
         <img src="/arena.jpg" alt="Arena Background" className='w-full h-full object-cover bg-no-repeat blur-[1px] opacity-90' draggable={false} />
       </div>
-      {/* <FireBall/> */}
 
     </div>
+    </>
   )
 }

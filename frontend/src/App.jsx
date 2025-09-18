@@ -9,18 +9,15 @@ function App() {
 
   return (
     <>
-
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="stats" element={<StatPage />} />
           <Route path="arena" element={<Arena />} />
-
         </Route>
       </Routes>
     </BrowserRouter>
-      {/* <Arena username={username} /> */}
     </>
   )
 }
